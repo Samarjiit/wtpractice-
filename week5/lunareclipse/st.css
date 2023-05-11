@@ -1,0 +1,49 @@
+html, body {
+	height: 100%;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background-color: black;
+}
+.moon {
+	background-color: white;
+	width: 256px;
+	height: 256px;
+	border-radius: 50%;
+	position: relative;
+    box-shadow: 0 0 100px #eb4022,
+
+}
+.moon2{
+    position: absolute;
+    background-color: black;
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    animation: 19.2s eclipse  infinite linear;
+    transform-origin: 50% 150%;
+
+}
+
+
+
+@keyframes eclipse {
+	0% {
+		transform: rotate(-60deg);
+	}
+	90% {
+		transform: rotate(30deg);
+		box-shadow: 
+					0 0 80px 8px black;
+		background: black;
+	}
+	100% {
+		transform: rotate(100deg);
+		box-shadow: none;
+	}
+} 
+

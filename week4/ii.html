@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+       body{
+    background-color: blueviolet;
+        }
+    .flex-container {
+  display: flex;
+  
+ 
+  flex-flow: row wrap;
+  
+  justify-content: space-around;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-item {
+  background: tomato;
+  padding: 10px;
+  width: 400px;
+  height: 400px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+.flex-container{
+    background-color:transparent;
+}
+ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #6df003;
+    }
+   .nav-vertical{
+    list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #6df003;
+       
+   }
+   .nav2{
+    height: 100%;
+   }
+   .vert{
+    float: none;
+   }
+    li{
+        float: left;
+    }
+    li a{
+        display: block;
+        color: #000000;
+        text-align: center;
+        padding:14px 16px;
+        text-decoration: none;
+    }
+    li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: rgb(5, 80, 80);
+  background-color: #04AA6D;
+}
+section{
+    float: left;
+    height: 1300px;
+}
+nav{
+   padding-left: 6%;
+}
+@media only screen and (max-width: 768px) {
+    .nav2{
+        display: none;
+    }
+    .nav1{
+        float: none;
+    }
+}
+ul.navv{
+    position: fixed;
+    width: 100%;
+    
+}
+
+ </style>
+
+</head>
+
+<body>
+    <h1 style="text-align: center; color: wheat; background-color: #000000; height: 50px;">Image Gallery</h1>
+    <header>
+            
+        <nav class="nav1">
+            <ul class="navv">
+                <li><a class="active" href="./photo.html">HOME</a></li>
+                <li><a  href="./index.html">GALLERY</a></li>
+
+                <li><a  href="#contact">CONTACT</a></li>
+
+                <li><a  href="#about">ABOUT</a></li>
+
+            </ul>
+        </nav>
+        <section >
+            <nav class="nav2">
+                <ul style="width: 100%; height: 100%;" class="nav-vertical">
+                    <li class="vert"><a class="active" href="./photo.html">HOME</a></li>
+                    <li class="vert"><a  href="./index.html">GALLERY</a></li>
+    
+                    <li class="vert"><a  href="#contact">CONTACT</a></li>
+    
+                    <li class="vert"><a  href="#about">ABOUT</a></li>
+    
+                </ul>
+            </nav>
+        </section>
+      
+    </header>
+<br>
+<br>
+<br>
+
+    <ul class="flex-container">
+        <li class="flex-item"><img src="4.webp" alt="Northern Li" height="100%" width="100%"></li>
+        <li class="flex-item"><img src="1.webp" alt="Northern Li" height="100%" width="100%"></li>
+        <li class="flex-item"><img src="3.jpeg" alt="Northern Li" height="100%" width="100%"></li>
+ 
+        
+    </ul>
+    <ul  class="flex-container">
+        <li class="flex-item"><img src="6.webp" alt="Northern Li" height="100%" width="100%"></li>
+        <li class="flex-item"><img src="5.webp" alt="Northern Li" height="100%" width="100%"></li>
+        <li class="flex-item"><img src="2.webp" alt="Northern Li" height="100%" width="100%"></li>
+       
+    </ul>
+    <ul class="flex-container">
+        <li class="flex-item"><img src="4.webp" alt="Northern Li" height="100%" width="100%"></li>
+        <li class="flex-item"><img src="3.jpeg" alt="Northern Li" height="100%" width="100%"></li>
+        <li class="flex-item"><img src="1.webp" alt="Northern Li" height="100%" width="100%"></li>
+       
+    </ul>
+    
+</body>
+
+</html>

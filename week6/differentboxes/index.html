@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Alert, Confirm, and Prompt Example</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		button {
+			display: block;
+			margin: 50px auto;
+			padding: 10px 20px;
+			background-color: #428bca;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>JavaScript Alert, Confirm, and Prompt Example</h1>
+	<button onclick="displayAlert()">Display Alert</button>
+	<button onclick="displayConfirm()">Display Confirm</button>
+	<button onclick="displayPrompt()">Display Prompt</button>
+
+	<script>
+		function displayAlert() {
+			alert("This is an alert message!");
+		}
+
+		function displayConfirm() {
+			if (confirm("Are you sure you want to continue?")) {
+				alert("You clicked OK!");
+			} else {
+				alert("You clicked Cancel!");
+			}
+		}
+
+		function displayPrompt() {
+			var name = prompt("Please enter your name:");
+			if (name != null) {
+				alert("Hello, " + name + "!");
+			}
+		}
+	</script>
+</body>
+</html>

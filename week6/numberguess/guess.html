@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Number Guessing Game</title>
+  
+    <style>
+    *{
+        font-family: sans-serif;
+    }
+      
+    body {
+        width: 400px;
+        height: 400px;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+    }
+    h1{
+        font-size: 30px;
+        margin-left: 100px;
+        font-family: Georgia;
+    }
+    p{
+        font-size: 17px;
+        color: rgb(50, 62, 29);
+    }
+    .guessSubmit{
+        background-color: rgb(176, 188, 206);
+        height: 30px;
+        border : 0.2px solid rgb(131, 135, 155);
+        border-radius: 20%;
+    }
+    .guessField{
+        background-color: rgb(155, 174, 189);
+    }
+    </style>
+</head>
+  
+<body>
+    <h1>Guess The Number</h1>
+    <p>
+        We have selected a random number between 1 - 10. 
+            See if you can guess it.
+      </p>
+  
+    <div class="form">
+        <label for="guessField">Enter your guess: </label>
+        <input type = "text" id = "guessField" class = "guessField">
+        <input type = "submit" value = "Submit guess"  class = "guessSubmit" id = "submitguess">
+    </div>
+  
+    <script type = "text/javascript">
+  
+      var y = Math.floor(Math.random() * 10 + 1);
+  
+      var guess = 1;
+  
+      document.getElementById("submitguess").onclick = function(){
+     
+          var x = document.getElementById("guessField").value;
+            
+          if(x == y)
+          {    
+            alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+                  + guess + " GUESS ");
+          }
+          else if(x > y) 
+          {    
+            guess++;
+            alert("OOPS SORRY!! TRY A SMALLER NUMBER");
+          }
+          else
+          {
+            guess++;
+            alert("OOPS SORRY!! TRY A GREATER NUMBER")
+          }
+      }
+    </script>
+</body>
+</html>  

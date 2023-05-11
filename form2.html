@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h1>Create an Account</h1>
+    <form id="registration-form" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required pattern="[a-zA-Z][a-zA-Z]*">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required pattern="(?=.*[A-Z]).{8,}">
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required pattern="^[A-Za-z0-9._%+-]+@manipaltech.com$">
+
+      <button type="submit">Create Account</button>
+    </form>
+    <script>
+      var form = document.getElementById("registration-form");
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+        var email = document.getElementById("email").value;
+        if (/^[a-zA-Z][a-zA-Z]*$/.test(username) && /(?=.*[A-Z]).{8,}/.test(password) && password === confirmPassword && /^[A-Za-z0-9._%+-]+@manipaltech.com$/.test(email)) {
+          alert("Account created successfully! Username: " + username + " Password: " + password + " Email: " + email);
+          form.reset();
+        } else {
+          alert("Invalid input. Please check your input and try again.");
+        }
+      });
+    </script>
+  </body>
+</html>

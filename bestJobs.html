@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="Stylesheet" href="st.css" />
+    <title>Best Jobs</title>
+
+    <style>
+      body {
+        background-color: rgb(165, 211, 236);
+        text-align: center;
+      }
+
+      .formbg {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        position: absolute;
+        background-color: white;
+        top: 100px;
+        left: 500px;
+        width: 500px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BEST JOBS</h1>
+    <div class="formbg">
+      <form method="POST" action="" id="regForm">
+        <div class="tab">
+          <input
+            style="width: 300px"
+            type="text"
+            id="username"
+            placeholder="Username"
+            onchange="userValidate()"
+            required
+          />
+          <input
+            style="width: 300px"
+            type="password"
+            id="password"
+            placeholder="Password"
+            onchange="passValidate()"
+            required
+          />
+          <input
+            style="width: 300px"
+            type="password"
+            id="conpassword"
+            placeholder="Confirm Password"
+            onchange="checkPassword()"
+            required
+          />
+        </div>
+
+        <div class="tab">
+          <input
+            style="width: 300px"
+            type="text"
+            id="firstname"
+            placeholder="First Name"
+            onchange="firstValidate()"
+            required
+          />
+          <input
+            style="width: 300px"
+            type="text"
+            id="lastname"
+            placeholder="Last Name"
+            onchange="lastValidate()"
+          />
+          <div class="gender" style="display: flex">
+            <label style="display: flex" for="male"
+              ><input type="radio" id="male" name="gender" value="Male" />
+              Male</label
+            >
+            <label style="display: flex" for="female">
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="Female"
+              />Female</label
+            >
+          </div>
+          <select name="Nationality" id="Nationality">
+            <option value="" hidden>Nationality</option>
+            <option value="Indian">Indian</option>
+            <option value="Australian">Australian</option>
+            <option value="American">American</option>
+          </select>
+          <input
+            style="width: 300px"
+            type="date"
+            id="dob"
+            placeholder="Date Of Birth"
+            oninput="ageValidate()"
+          />
+        </div>
+
+        <div class="tab">
+          <input
+            style="width: 300px"
+            type="calendar"
+            id="email"
+            placeholder="Email Address"
+            onchange="emailValidate() "
+          />
+          <input
+            style="width: 300px"
+            type="number"
+            id="phone"
+            placeholder="Phone Number"
+            onchange="phoneValidate()"
+          />
+          <textarea
+            id="address"
+            placeholder="Address"
+            rows="5"
+            cols="41"
+          ></textarea>
+        </div>
+
+        <div class="tab">
+          <input
+            style="width: 300px"
+            type="text"
+            id="twitter"
+            placeholder="Twitter ID"
+          />
+          <input
+            style="width: 300px"
+            type="text"
+            id="facebook"
+            placeholder="Facebook ID"
+          />
+          <input
+            style="width: 300px"
+            type="text"
+            id="google"
+            placeholder="Google Link"
+            onchange="googleValidate()"
+          />
+        </div>
+
+        <div class="tab">
+          <input
+            style="width: 300px"
+            type="number"
+            id="ug"
+            placeholder="UG CGPA"
+            onchange="ugcgpaValidate()"
+          />
+          <input
+            style="width: 300px"
+            type="number"
+            id="pg"
+            placeholder="PG CGPA"
+            onchange="pgcgpaValidate()"
+          />
+          <input
+            style="width: 300px"
+            type="text"
+            id="proj1"
+            placeholder="Project 1"
+          />
+          <input
+            style="width: 300px"
+            type="text"
+            id="proj2"
+            placeholder="Project 2"
+          />
+          <input
+            style="width: 300px"
+            type="text"
+            id="proj3"
+            placeholder="Project 3"
+          />
+        </div>
+
+        <div class="tab display row" id="displayMain">
+          <div class="align" id="fname"></div>
+          <div class="align" id="lname"></div>
+          <div class="align" id="gender"></div>
+          <div class="align" id="na"></div>
+          <div class="align" id="date"></div>
+          <div class="align" id="em"></div>
+          <div class="align" id="ph"></div>
+          <div class="align" id="add"></div>
+          <!-- <div class="align" id="twi"></div>
+                <div class="align" id="fb"></div>
+                <div class="align" id="wb"></div> -->
+          <div class="align" id="ug1"></div>
+          <div class="align" id="pg1"></div>
+          <div class="align" id="p1"></div>
+          <div class="align" id="p2"></div>
+          <div class="align" id="p3"></div>
+        </div>
+
+        <div class="tab">
+          <h1>Submitted!</h1>
+        </div>
+
+        <div style="overflow: auto; margin-bottom: 10px">
+          <div style="float: right" id="centerStyle">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+              Previous
+            </button>
+            <button
+              type="button"
+              style="margin-right: 20px"
+              id="nextBtn"
+              onclick="nextPrev(1)"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div id="circle" style="text-align: center">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+
+    function showTab(n) {
+      // This function will display the specified tab of the form ...
+      var x = document.getElementsByClassName('tab');
+      x[n].style.display = 'block';
+      // ... and fix the Previous/Next buttons:
+      if (n == 0) {
+        document.getElementById('prevBtn').style.display = 'none';
+        //   document.getElementById("disBtn").style.display = "none";
+      } else {
+        document.getElementById('prevBtn').style.display = 'inline';
+        //  document.getElementById("disBtn").style.display = "none";
+      }
+      if (n == x.length - 3) {
+        document.getElementById('nextBtn').innerHTML = 'Display';
+      } else if (n == x.length - 2) {
+        displayValues();
+        document.getElementById('nextBtn').innerHTML = 'Submit';
+      } else if (n == x.length - 1) {
+        document.getElementById('prevBtn').style.display = 'none';
+        document.getElementById('nextBtn').style.display = 'none';
+        //  document.getElementById("disBtn").style.display = "none";
+      } else {
+        document.getElementById('nextBtn').innerHTML = 'Next';
+        //  document.getElementById("disBtn").style.display = "none";
+      }
+      if (n >= x.length - 2) {
+        document.getElementById('circle').style.display = 'none';
+        document.getElementById('disBtn').style.display = 'none';
+      }
+      // ... and run a function that displays the correct step indicator:
+      fixStepIndicator(n);
+    }
+
+    function fixStepIndicator(n) {
+      // This function removes the "active" class of all steps...
+      var i,
+        x = document.getElementsByClassName('step');
+      for (i = 0; i < x.length - 2; i++) {
+        x[i].className = x[i].className.replace(' active', '');
+      }
+      //... and adds the "active" class to the current step:
+      x[n].className += ' active';
+    }
+
+    function nextPrev(n) {
+      // This function will figure out which tab to display
+      // var x = document.getElementsByClassName("tab");
+      // x[n].style.display = "none";
+      // y=n+1;
+      // showTab(y);
+
+      // This function will figure out which tab to display
+      var x = document.getElementsByClassName('tab');
+      // Exit the function if any field in the current tab is invalid:
+      if (n == 1 && !validateForm()) return false;
+      // Hide the current tab:
+      x[currentTab].style.display = 'none';
+      // Increase or decrease the current tab by 1:
+      currentTab = currentTab + n;
+      // if you have reached the end of the form...
+      if (currentTab >= x.length) {
+        // ... the form gets submitted:
+        document.getElementById('regForm').submit();
+        return false;
+      }
+      // Otherwise, display the correct tab:
+      showTab(currentTab);
+    }
+
+    function userValidate() {
+      var x = document.getElementById('username').value;
+      var rg = /^[A-Z][a-zA-Z0-9]*$/;
+      if (rg.test(x)) {
+        return true;
+      } else {
+        alert('Invalid Username!');
+        document.getElementById('username').value = '';
+        return false;
+      }
+    }
+
+    function passValidate() {
+      var x = document.getElementById('password').value;
+      var rg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{7,}$/;
+      if (rg.test(x)) return true;
+      else {
+        alert('Invalid Password!');
+        document.getElementById('password').value = '';
+        return false;
+      }
+    }
+
+    function checkPassword() {
+      var x = document.getElementById('password').value;
+      var y = document.getElementById('conpassword').value;
+      if (y == x) return true;
+      else {
+        alert('Password Not Matching');
+        document.getElementById('password').value = '';
+        document.getElementById('conpassword').value = '';
+        return false;
+      }
+    }
+
+    function firstValidate() {
+      var x = document.getElementById('firstname').value;
+      var rg = /^[A-Z][a-zA-Z]*$/;
+      if (rg.test(x)) return true;
+      else {
+        alert('Invalid Firstname!');
+        document.getElementById('firstname').value = '';
+        return false;
+      }
+    }
+
+    function lastValidate() {
+      var y = document.getElementById('lastname').value;
+      var rgy = /^([A-Z][a-zA-Z]*)?$/;
+      if (rgy.test(y)) return true;
+      else {
+        alert('Invalid Lastname!');
+        document.getElementById('lastname').value = '';
+        return false;
+      }
+    }
+
+    function ageValidate() {
+      // Get the input value and create a new Date object
+      const dob = new Date(document.getElementById('dob').value);
+
+      // Subtract 18 years from the Date object
+      dob.setFullYear(dob.getFullYear() + 18);
+
+      // Get the current date
+      const now = new Date();
+
+      // Compare the dates to check if the person is above 18 years old
+      if (dob <= now) {
+        return true;
+      } else {
+        alert('Age must be above 18!');
+        return false;
+      }
+    }
+
+    function emailValidate() {
+      var x = document.getElementById('email').value;
+      var rg = /^[a-zA-Z0-9._%+-]+@(learner\.)?manipal\.edu$/;
+      if (rg.test(x)) {
+        return true;
+      } else {
+        alert('Invalid Email!');
+        document.getElementById('email').value = '';
+        return false;
+      }
+    }
+
+    function phoneValidate() {
+      var x = document.getElementById('phone').value;
+      var rg = /^[6-9]\d{9}$/;
+      if (rg.test(x)) {
+        return true;
+      } else {
+        alert('Invalid Phone!');
+        document.getElementById('phone').value = '';
+        return false;
+      }
+    }
+
+    function googleValidate() {
+      var x = document.getElementById('google').value;
+      var rg = /^www\..+\.com$/;
+      if (rg.test(x)) {
+        return true;
+      } else {
+        alert('Invalid Google Link!');
+        document.getElementById('google').value = '';
+        return false;
+      }
+    }
+
+    function ugcgpaValidate() {
+      var ug = document.getElementById('ug').value;
+      var flag = true;
+      if (ug == '' || ug < 0 || ug > 10) {
+        alert('UG CGPA should be greater than 0 and less than 10');
+        document.getElementById('ug').value = '';
+        flag = false;
+      }
+
+      return flag;
+    }
+
+    function pgcgpaValidate() {
+      var pg = document.getElementById('pg').value;
+      var flag = true;
+      if (pg == '' || pg < 0 || pg > 10) {
+        alert('PG CGPA should be greater than 0 and less than 10');
+        document.getElementById('pg').value = '';
+        flag = false;
+      }
+
+      return flag;
+    }
+
+    function validateForm() {
+      if (currentTab == 0) {
+        if (userValidate() && checkPassword() && passValidate()) return true;
+        else return false;
+      } else if (currentTab == 1) {
+        if (!firstValidate()) return false;
+        else if (!lastValidate()) return false;
+        else if (
+          document.getElementById('male').checked == false &&
+          document.getElementById('female').checked == false
+        ) {
+          alert('Enter Gender!');
+        } else if (document.getElementById('Nationality').value == '') {
+          alert('Enter Nationality!');
+        } else if (!ageValidate()) return false;
+        else return true;
+      } else if (currentTab == 2) {
+        if (emailValidate() && phoneValidate()) {
+          if (document.getElementById('address').value != '') return true;
+          else if (document.getElementById('address').value == '')
+            alert('Enter Address!');
+          else return false;
+        }
+      } else if (currentTab == 3) {
+        if (
+          document.getElementById('twitter').value == '' &&
+          document.getElementById('facebook').value == '' &&
+          document.getElementById('google').value == ''
+        ) {
+          alert('Enter any one of the values');
+        } else if (document.getElementById('google').value != '') {
+          if (googleValidate() == false) return false;
+          else return true;
+        } else return true;
+      } else if (currentTab == 4) {
+        if (!ugcgpaValidate()) return false;
+        else if (!pgcgpaValidate()) return false;
+        else if (
+          document.getElementById('proj1').value == '' &&
+          document.getElementById('proj2').value == '' &&
+          document.getElementById('proj3').value == ''
+        )
+          alert('Enter any one of the values');
+        else return true;
+      } else if (currentTab == 5) return true;
+    }
+
+    function displayValues() {
+      var fname = document.getElementById('firstname').value;
+      document.getElementById('fname').innerHTML =
+        '<b>First Name: </b>' + fname;
+
+      var lname = document.getElementById('lastname').value;
+      if (lname != '')
+        document.getElementById('lname').innerHTML =
+          '<b>Last Name: </b>' + lname;
+
+      var g = document.getElementsByName('gender');
+      var gender;
+      for (var i = 0; i < g.length; i++) {
+        if (g[i].checked) {
+          gender = g[i].value;
+          break;
+        }
+      }
+      document.getElementById('gender').innerHTML = '<b>Gender: </b>' + gender;
+
+      var nationality = document.getElementById('Nationality').value;
+      document.getElementById('na').innerHTML =
+        '<b>Nationality: </b>' + nationality;
+
+      var date = document.getElementById('dob').value;
+      document.getElementById('date').innerHTML =
+        '<b>Date of Birth: </b>' + date;
+
+      var email = document.getElementById('email').value;
+      document.getElementById('em').innerHTML = '<b>Email: </b>' + email;
+
+      var phone = document.getElementById('phone').value;
+      document.getElementById('ph').innerHTML = '<b>Phone Number: </b>' + phone;
+
+      var add = document.getElementById('address').value;
+      document.getElementById('add').innerHTML = '<b>Address: </b>' + add;
+
+      // var twi=document.getElementById('twitter').value
+      // if(twi!="")
+      //     document.getElementById('twi').innerHTML="<b>Twitter: </b>"+twi;
+      var twitter = document.getElementById('twitter').value;
+      if (twitter != '' && twitter != null) {
+        var para = document.createElement('div');
+        para.innerHTML = '<b>Twitter : </b>' + twitter;
+        // var node=document.createTextNode("<strong>Twitter : </strong>"+twitter);
+        // para.appendChild(node);
+        para.classList.add('align');
+        var element = document.getElementById('displayMain');
+        var child = document.getElementById('ug1');
+        element.insertBefore(para, child);
+      }
+
+      var facebook = document.getElementById('facebook').value;
+      if (facebook != '' && facebook != null) {
+        var para = document.createElement('div');
+        para.innerHTML = '<b>Facebook : </b>' + facebook;
+        // var node=document.createTextNode("Facebook : "+facebook);
+        // para.appendChild(node);
+        para.classList.add('align');
+        var element = document.getElementById('displayMain');
+        var child = document.getElementById('ug1');
+        element.insertBefore(para, child);
+      }
+
+      var google = document.getElementById('google').value;
+      if (google != '' && google != null) {
+        var para = document.createElement('div');
+        para.innerHTML = '<b>Google : </b>' + google;
+        // var node=document.createTextNode("<b>Google : </b>"+google);
+        // para.appendChild(node);
+        para.classList.add('align');
+        var element = document.getElementById('displayMain');
+        var child = document.getElementById('ug1');
+        element.insertBefore(para, child);
+      }
+      // var fb=document.getElementById('facebook').value
+      // if(fb!="")
+      //     document.getElementById('fb').innerHTML="<b>Facebook: </b>"+fb;
+
+      // var google=document.getElementById('google').value
+      // if(google!="")
+      //     document.getElementById('wb').innerHTML="<b>Google Link: </b>"+google;
+
+      var ug = document.getElementById('ug').value;
+      document.getElementById('ug1').innerHTML = '<b>UG CGPA: </b>' + ug;
+
+      var pg = document.getElementById('pg').value;
+      document.getElementById('pg1').innerHTML = '<b>PG CGPA: </b>' + pg;
+
+      var p1 = document.getElementById('proj1').value;
+      if (p1 != '')
+        document.getElementById('p1').innerHTML = '<b>Project 1: </b>' + p1;
+
+      var p2 = document.getElementById('proj2').value;
+      if (p2 != '')
+        document.getElementById('p2').innerHTML = '<b>Project 2: </b>' + p2;
+
+      var p3 = document.getElementById('proj3').value;
+      if (p3 != '')
+        document.getElementById('p3').innerHTML = '<b>Project 3: </b>' + p3;
+    }
+  </script>
+</html>

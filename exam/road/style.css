@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(250, 250, 250);
+    
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roadarea{
+    position: absolute;
+    height: 600px;
+    width: 600px ;
+    background-color: rgb(172, 171, 171);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.road{
+    position:relative;
+    height: 600px;
+    width: 400px;
+    background-color: rgb(247, 247, 247);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.lane1{
+    position: absolute;
+    height: 600px;
+    width: 100px;
+    top: 0;
+    left: 0;
+    border-right: 5px dashed black;
+    border-left: 10px solid black;
+    
+}
+
+.lane2{
+    position: absolute;
+    height: 600px;
+    width: 100px;
+    left: 100px;
+    border-right: 5px dashed black
+}
+
+.lane3{
+    position: absolute;
+    height: 600px;
+    width: 100px;
+    left: 200px;
+    border-right: 5px dashed black
+}
+
+.lane4{
+    position: absolute;
+    height: 600px;
+    width: 100px;
+    top: 0;
+    left: 300px;
+    border-right: 10px solid black
+}
+
+.sign1{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 5%;
+    left: 5%;
+    background-color: rgb(37, 37, 37);
+    border-radius: 50%;
+}
+
+#ab{
+    position: absolute;
+    font-size: large;
+    font-weight: 900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sign2{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 70%;
+    left: 90%;
+    background-color: rgb(37, 37, 37);
+    border-radius: 50%;
+}
+#ac{
+    position: absolute;
+    font-size: large;
+    font-weight: 900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.car1{
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 20%;
+    left: 50%;
+    border-radius: 5%;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    animation: c4 15s linear infinite;
+}
+
+.car2{
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 70%;
+    left: 50%;
+    border-radius: 5%;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    animation: c4 10s linear infinite;
+}
+
+.car3{
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 40%;
+    left: 50%;
+    background-color: black;
+    border-radius: 5%;
+    transform: translate(-50%, -50%);
+    animation: c4 5s linear infinite ;
+}
+
+.car4{
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 90%;
+    left: 50%;
+    background-color: black;
+    border-radius: 5%;
+    transform: translate(-50%, -50%);
+    animation: c4 1s linear infinite ;
+}
+
+@keyframes c4 {
+    0%{top: 90%; left: 50%;}
+    100%{top: 5%; left: 50%; }
+}
+
+ .pole1{
+    position: absolute;
+    height: 60px;
+    width: 5px;
+    top: 10%;
+    left: 8%;
+    background-color: rgb(65, 64, 64);
+    border-radius: 10px;
+    z-index: -1;
+
+}
+
+.pole2{
+    position: absolute;
+    height: 60px;
+    width: 5px;
+    top: 75%;
+    left: 93%;
+    background-color: rgb(60, 60, 61);
+    border-radius: 10px;
+
+} 
+
+span{
+    position: absolute;
+    color: rgb(221, 228, 16);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}

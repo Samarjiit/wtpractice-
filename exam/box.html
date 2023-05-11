@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 100%;
+            background-color: green;
+            position: absolute;
+            margin: auto;
+            overflow: hidden;
+        }
+        .box2{
+            width: 400px;
+            height: 100%;
+            background-color: rgb(142, 175, 142);
+            position: absolute;
+            margin: auto;
+            left: 400px;
+            overflow: hidden;
+        }
+        .box3{
+            width: 400px;
+            height: 100%;
+            background-color: rgb(83, 153, 83);
+            position: absolute;
+            margin: auto;
+            left: 800px;
+            overflow: hidden;
+        }
+        .box4{
+            width: 400px;
+            height: 100%;
+            background-color: rgb(67, 83, 67);
+            position: absolute;
+            margin: auto;
+            left: 1200px;
+        }
+        .ball1{
+            width: 50px;
+            height: 50px;
+            background-color: beige;
+            border-radius: 100%;
+            position: absolute;
+            margin: auto;
+            top:90%;
+            left: 45%;
+            animation-name: animball;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        .ball2{
+            width: 50px;
+            height: 50px;
+            background-color: beige;
+            border-radius: 100%;
+            position: absolute;
+            margin: auto;
+            top:90%;
+            left: 45%;
+            animation-name: animball;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        .ball3{
+            width: 50px;
+            height: 50px;
+            background-color: beige;
+            border-radius: 100%;
+            position: absolute;
+            margin: auto;
+            top:90%;
+            left: 45%;
+            animation-name: animball;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+        }
+        .wind1{
+            height: 300px;
+            width: 25px;
+            background-color: blue;
+            top: 68%;
+            left: 50%;
+            position: absolute;
+            margin: auto;
+            z-index: 1;
+            
+        }
+        .wind2{
+            height: 300px;
+            width: 25px;
+            background-color: white;
+            top: 45%;
+            left: 50%;
+            position: absolute;
+            margin: auto;
+            z-index: 2;
+            animation-name: windanim;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        .wind3{
+            height: 25px;
+            width: 300px;
+            background-color: red;
+            top: 68%;
+            left: 15%;
+            position: absolute;
+            margin: auto;
+            z-index: 3;
+            animation-name: windanim;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        .wind4{
+            height: 25px;
+            width: 300px;
+            background-color: gray;
+            top: 67%;
+            left: 15%;
+            position: absolute;
+            margin: auto;
+            z-index: 3;
+            rotate: 45deg;
+            
+            animation-name: windanim;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        h2{
+            text-align: center;
+        }
+        @keyframes animball{
+            from{top: 100;}
+            to{top: 0;}
+        }
+        @keyframes windanim{
+            from{transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+        }
+        @keyframes windanim1{
+            from{transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h2 class="text">3</h2>
+        <div class="ball1"></div>
+    </div>
+    <div class="box2">
+        <h2 class="text">5</h2>
+        <div class="ball2"></div>
+    </div>
+    <div class="box3">
+        <h2 class="text">8</h2>
+        <div class="ball3"></div>
+    </div>
+    <div class="box4">
+        <div class="wind1"></div>
+        <div class="wind2"></div>
+        <div class="wind3"></div>
+        <div class="wind4"></div>
+    </div>
+</body>
+</html>

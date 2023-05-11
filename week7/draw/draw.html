@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<script>
+var canvas;
+var context;
+var isDrawing = false;
+window.onload = function() 
+{
+   canvas = document.getElementById('canvas');
+   context = canvas.getContext('2d');
+   canvas.width = 400;
+   canvas.height = 200;
+   context.strokeStyle = "#913d88";
+   context.lineWidth = 2;
+   
+   canvas.onmousedown = startDrawing;
+   canvas.onmouseup = stopDrawing;
+   canvas.onmousemove = draw;
+   document.getElementById('clearBtn').addEventListener('click', clearCanvas);
+}   
+   function startDrawing(e) 
+   {
+      isDrawing = true;
+      context.beginPath();
+      context.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+   }
+   
+   function draw(e) 
+   {
+      if (isDrawing == true) 
+      {
+         var x = e.pageX - canvas.offsetLeft;
+         var y = e.pageY - canvas.offsetTop;
+      
+         context.lineTo(x, y);
+         context.stroke();
+      }
+   }
+   
+   function stopDrawing() 
+   {
+      isDrawing = false;
+   }
+   function clearCanvas() 
+   {
+   context.clearRect(0, 0, canvas.width, canvas.height);
+   }
+
+</script>
+<body>
+
+   <h1>freehand drawing on canvas</h1>
+   <canvas id="canvas" style="border:1px solid #d3d3d3;">
+   Your browser does not support the HTML canvas tag.</canvas><br>
+   <button id="clearBtn">Clear</button>
+</body>
+</html>
+

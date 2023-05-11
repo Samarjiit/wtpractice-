@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Passport Application Form</title>
+  </head>
+  <body>
+    <h1 align="center">PASSPORT APPLICATION FORM</h1>
+    <form action="passport_application.php" method="post" enctype="multipart/form-data">
+        <label>Register To Apply At:</label>
+        <input type="radio" name="Applyat" value="Cpv Delhi"> Cpv Delhi
+        <input type="radio" name="Applyat" value="Passport Office"> Passport Office
+        <br><br>
+
+        <label>Place of Birth:</label>
+        <input type="text" name="placeOfBirth">
+        <br><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <br><br>
+
+        <label>Passport Office:</label>
+        <select name="identityType" required>
+            <option value="">----- Select -----</option>
+            <option value="1">Ahmedabad</option>
+            <option value="2">Amritsar</option>
+            <option value="4">Bareilly</option>
+            <option value="5">Bengaluru</option>
+            <option value="7">Bhopal</option>
+            <option value="3">Bhubaneswar</option>
+            <option value="10">Chandigarh</option>
+            <option value="26">Chennai</option>
+            <option value="11">Cochin</option>
+            <option value="9">Coimbatore</option>
+            <option value="14">Dehradun</option>
+            <option value="15">Delhi</option>
+            <option value="18">Ghaziabad</option>
+            <option value="16">Goa</option>
+            <option value="17">Guwahati</option>
+            <option value="19">Hyderabad</option>
+        </select>
+        <br><br>
+
+        <label>Given Name:</label>
+        <input type="text" name="name">
+        <br><br>
+     
+        <label>Surname:</label>
+        <input type="text" name="name">
+        <br><br>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="dob">
+        <br><br>
+
+        <label>E-mail id:</label>
+        <input type="text" name="E-mail id">
+        <br><br>
+
+        <label>Do you want your Login Id
+        to be same as E-mail Id?</label>
+        <input type="radio" name="Yes" value="Yes"> Yes
+        <input type="radio" name="No" value="No"> No
+        <br><br>
+
+        <label>Login id:</label>
+        <input type="Login id" name="Login id">Check Availibility
+        <br><br>
+
+        <label>Password:</label>
+        <input type="Password" name="Password">Password Policy
+        <br><br>
+
+        <label>Confirm Password:</label>
+        <input type="Password" name="Password">
+        <br><br>
+
+        
+        <label>Hint Question:</label>
+        <select name="identityType">
+            <option value="">----- Select -----</option>
+            <option value="1">Birth City</option>
+            <option value="2">Favourite Colour</option>
+            <option value="3">Favourite Cricketer</option>
+            <option value="4">Favourite Food</option>
+            <option value="5">First School</option>
+        </select>
+        <br><br>
+
+        <label>Hint Answer:</label>
+        <input type="text" name="text">
+        <br><br>
+
+        <label>Enter Characters Displayed:</label>
+        <img src="https://th.bing.com/th/id/R.18c78ec786cc52a47d13810c1b438391?rik=JH10McZ76VNnuw&riu=http%3a%2f%2fwww.flipada.com%2fwp-content%2fuploads%2f2016%2f07%2fcabecera-6.jpg&ehk=PNt6YE8yIgFqKRAbzWwQLPZtzHGpp3msbvK9vqspJAo%3d&risl=&pid=ImgRaw&r=0" width="100px" height="100px">
+        <br>
+        <input type="text" name="text">
+        <br><br>
+    <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

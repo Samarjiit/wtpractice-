@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>XYZ Technologies Registration Form</title>
+	<script type="text/javascript">
+		function validateForm() {
+			// Get form fields
+			var username = document.getElementById("name");
+			var password = document.forms["registrationForm"]["password"].value;
+			var confirmPassword = document.forms["registrationForm"]["confirmPassword"].value;
+			var email = document.forms["registrationForm"]["email"].value;
+
+			// Regular expression patterns
+			var usernamePattern = /^[A-Za-z]+$/;
+			var passwordPattern = /^(?=.*[A-Z])[A-Za-z\d@$!%*?&]{8,}$/;
+			var emailPattern = /^[A-Za-z0-9]+[$#][A-Za-z0-9]+@XYZ\.COM$/;
+
+			// Validate username
+			if (!username.match(usernamePattern)) {
+				alert("Username must contain regular word literals");
+				return false;
+			}
+
+			// Validate password
+			if (!password.match(passwordPattern)) {
+				alert("Password should contain at least 8-characters and minimum one uppercase letter");
+				return false;
+			}
+
+			// Validate confirm password
+			if (password !== confirmPassword) {
+				alert("Confirm password should match the password field");
+				return false;
+			}
+
+			// Validate email
+			if (!email.match(emailPattern)) {
+				alert("Email field's local part must be of 7-character length, with atleast one symbol character among $ and #. The email address must end XYZ.COM");
+				return false;
+			}
+
+			// Successful validation
+			alert("Registration successful!");
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<h1>XYZ Technologies Registration Form</h1>
+	<form name="registrationForm" onsubmit="return validateForm()">
+		<label for="username">Username:</label>
+		<input id="name" type="text" name="username" required><br>
+
+		<label for="password">Password:</label>
+		<input type="password" name="password" required><br>
+
+		<label for="confirmPassword">Confirm Password:</label>
+		<input type="password" name="confirmPassword" required><br>
+
+		<label for="email">Email:</label>
+		<input type="email" name="email" required><br>
+
+		<input type="submit" value="Register">
+	</form>
+</body>
+</html>

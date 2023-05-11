@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @keyframes windmillanimation {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes candleanimation {
+        from {
+            opacity:1;
+        }
+
+        to {
+             opacity:0;
+        }
+    }
+.img1{
+position: absolute;
+top:-30px;
+left:-15px;
+animation: candleanimation 3s linear;
+animation-delay: 1s;
+        animation-iteration-count: infinite;
+  
+}
+.img2{
+position: absolute;
+top:-30px;
+left:-15px;
+animation: candleanimation 2s linear;
+animation-delay: 2s;
+        animation-iteration-count: infinite;
+}
+.img3{
+position: absolute;
+top:-30px;
+left:-15px;
+animation: candleanimation 3s linear;
+animation-delay: 3s;
+        animation-iteration-count: infinite;
+}
+    .triangle-up {
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        right: 0;
+        margin-top: 350px;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 400px solid #555;
+    }
+    .flame1 {
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        right: 0;
+        margin-top: 350px;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 400px solid #555;
+    }
+    .triangle-b {
+        position: absolute;
+        right: 40px;
+        top: -200px;
+        width: 0;
+        height: 0;
+        margin-top: 350px;
+        border-left: 70px solid transparent;
+        border-right: 70px solid transparent;
+        border-top: 200px solid black;
+    }
+    .triangle-bottom {
+      
+        width: 0;
+        height: 0;
+      position: relative;
+      left: 70px;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 70px solid yellow;
+    }
+    .triangle-top {
+      
+      width: 0;
+      height: 0;
+    position: relative;
+  top:60px;
+  left:70px;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 70px solid yellow;
+  }
+    .circle {
+        height: 200px;
+        border-radius: 100%;
+        width: 200px;
+        background-color: #555;
+        top: -120px;
+        right: 100px;
+        position: relative;
+        animation: windmillanimation 2s ease-in-out;
+        animation-iteration-count: infinite;
+    }
+
+    .circle1 {
+        height: 200px;
+        border-radius: 100%;
+        width: 200px;
+        background-color: blue;
+       top:-300px;
+       right:400px;
+       position:absolute;
+        border:2px solid black;
+        position: relative;
+     
+        animation-iteration-count: infinite;
+    }
+    .circle2 {
+        height: 100px;
+        border-radius: 100%;
+        width: 100px;
+        background-color: green;
+    
+       
+        border:2px solid black;
+        position: absolute;
+       top:50px;
+       left:40px;
+        animation-iteration-count: infinite;
+    }
+.rectangel{
+    height:100px;
+    width:20px;
+    background-color: white;
+    position: relative;
+    bottom:100px;
+    margin-left: 10px;
+}
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 70px solid transparent;
+        border-right: 70px solid transparent;
+        border-bottom: 200px solid black;
+        position: absolute;
+        right: 40px;
+        bottom: 150px;
+    }
+
+    .triangle-left {
+        width: 0;
+        height: 0;
+        border-top: 70px solid transparent;
+        border-right: 200px solid black;
+        border-bottom: 70px solid transparent;
+        position: absolute;
+        right: 150px;
+        top: 40px;
+
+
+    }
+    .triangle-l {
+        width: 0;
+      height: 0;
+    position: relative;
+  top:-60px;
+left:100px;
+border-top: 20px solid transparent;
+        border-right: 100px solid yellow;
+        border-bottom: 20px solid transparent;
+  }
+
+    l
+
+    .triangle-left {
+        width: 0;
+        height: 0;
+        border-top: 70px solid transparent;
+        border-right: 200px solid black;
+        border-bottom: 70px solid transparent;
+        position: absolute;
+        right: 150px;
+        top: 40px;
+        z-index: 4;
+    }
+
+    .triangle-right {
+        width: 0;
+        height: 0;
+        border-top: 70px solid transparent;
+        border-left: 200px solid black;
+        border-bottom: 70px solid transparent;
+        position: absolute;
+        right: -150px;
+        top: 40px;
+        z-index: 4;
+    }
+</style>
+
+<body>
+    <div style="height:800px;width:800px;background-color:red;position: relative;;">
+    <div class="triangle-up">
+        <div class="circle">
+            <div class="triangle">
+
+            </div>
+            <div class="triangle-left">
+
+            </div>
+            <div class="triangle-right">
+
+            </div>
+            <div class="triangle-b">
+
+            </div>
+        </div>
+       
+        <div class="circle1">
+            <div class="triangle-bottom">
+
+            </div>
+            <div class="triangle-top">
+
+            </div>
+            <div class="triangle-l">
+
+            </div>
+            <div class="circle2">
+                <div style ="display: flex;flex-direction: row;">
+            <div class="rectangel"><img class="img3" src="https://th.bing.com/th/id/R.f81f4fe2a955219fe6b290fdef209be1?rik=bqBpya8cWpMXTQ&riu=http%3a%2f%2fimages.clipartpanda.com%2fblue-flame-clipart-clip-art-flames.png&ehk=EgCV64G3GVlYWx9ewwksUIFwIh0LNUmjOKUB5m4EQhM%3d&risl=&pid=ImgRaw&r=0" alt="Girl in a jacket" width="40" height="40"></div>
+            <div class="rectangel"><img class="img2" src="https://th.bing.com/th/id/R.f81f4fe2a955219fe6b290fdef209be1?rik=bqBpya8cWpMXTQ&riu=http%3a%2f%2fimages.clipartpanda.com%2fblue-flame-clipart-clip-art-flames.png&ehk=EgCV64G3GVlYWx9ewwksUIFwIh0LNUmjOKUB5m4EQhM%3d&risl=&pid=ImgRaw&r=0" alt="Girl in a jacket" width="40" height="40"></div>
+            <div class="rectangel"><img class="img1" src="https://th.bing.com/th/id/R.f81f4fe2a955219fe6b290fdef209be1?rik=bqBpya8cWpMXTQ&riu=http%3a%2f%2fimages.clipartpanda.com%2fblue-flame-clipart-clip-art-flames.png&ehk=EgCV64G3GVlYWx9ewwksUIFwIh0LNUmjOKUB5m4EQhM%3d&risl=&pid=ImgRaw&r=0" alt="Girl in a jacket" width="40" height="40"></div>
+        </div>
+            </div>
+        </div>
+       
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+       body{
+    background-color: blueviolet;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #6df003;
+    }
+   .nav-vertical{
+    list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #6df003;
+   }
+   .vert{
+    float: none;
+   }
+    li{
+        float: left;
+    }
+    li a{
+        display: block;
+        color: #000000;
+        text-align: center;
+        padding:14px 16px;
+        text-decoration: none;
+    }
+    li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: rgb(5, 80, 80);
+  background-color: #04AA6D;
+}
+
+section{
+    float: left;
+    height: 1300px;
+}
+
+h2{
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav2{
+        display: none;
+    }
+}
+        </style>
+        <title>Photo Gallery</title>
+    </head>
+    <body>
+            <nav>
+                <ul>
+                    <li><a class="active" href="#home">HOME</a></li>
+                    <li><a  href="./ii.html">GALLERY</a></li>
+
+                    <li><a  href="#contact">CONTACT</a></li>
+
+                    <li><a  href="#about">ABOUT</a></li>
+
+                </ul>
+            </nav>
+            <section>
+                <nav class="nav2">
+                    <ul class="nav-vertical">
+                        <li class="vert"><a class="active" href="#home">HOME</a></li>
+                        <li class="vert"><a  href="./ii.html">GALLERY</a></li>
+    
+                        <li class="vert"><a  href="#contact">CONTACT</a></li>
+    
+                        <li class="vert"><a  href="#about">ABOUT</a></li>
+    
+                    </ul>
+                </nav>
+            </section>
+            <section style="padding-left: 5%;">
+                <h2>About flexBox</h2>
+                <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. Items flex (expand) to fill additional space or shrink to fit into smaller spaces. This article explains all the fundamentals.</p>
+                <p>
+                    The Flexible Box Module, usually referred to as flexbox, was designed as a one-dimensional layout model, and as a method that could offer space distribution between items in an interface and powerful alignment capabilities.
+
+                </p>
+            </section>
+               
+            
+       
+      
+
+    </body>
+</html>

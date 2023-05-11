@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        background-color: blueviolet;
+    }
+
+    h1{
+            text-align: center;
+        }
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #6df003;
+    }
+   .nav-vertical{
+    list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #6df003;
+   }
+   .vert{
+    float: none;
+   }
+    li{
+        float: left;
+    }
+    li a{
+        display: block;
+        color: #000000;
+        text-align: center;
+        padding:14px 16px;
+        text-decoration: none;
+    }
+    li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: rgb(5, 80, 80);
+  background-color: #04AA6D;
+}
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+    <header>
+            
+        <nav>
+            <ul>
+                <li><a class="active" href="./photo.html">HOME</a></li>
+                <li><a  href="./ii.html">GALLERY</a></li>
+
+                <li><a  href="#contact">CONTACT</a></li>
+
+                <li><a  href="#about">ABOUT</a></li>
+
+            </ul>
+        </nav>
+        
+        <nav>
+            <ul style="width: 7%;" class="nav-vertical">
+                <li class="vert"><a class="active" href="./photo.html">HOME</a></li>
+                <li class="vert"><a  href="./ii.html">GALLERY</a></li>
+
+                <li class="vert"><a  href="#contact">CONTACT</a></li>
+
+                <li class="vert"><a  href="#about">ABOUT</a></li>
+
+            </ul>
+        </nav>
+    </header>
+<h2>Responsive Image Gallery</h2>
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="1.webp">
+      <img src="2.webp" alt="Cinque Terre" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="3.jpeg">
+      <img src="3.jpeg" alt="Forest" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="4.webp">
+      <img src="4.webp" alt="Northern Lights" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="5.webp">
+      <img src="5.webp" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div style="padding:6px;">
+  
+</div>
+
+</body>
+</html>
+
+

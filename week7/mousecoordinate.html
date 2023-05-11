@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Mouse Co-ordinates</title>
+    <style>
+        #canvas {
+            border: 2px dotted black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Mouse Co-ordinates</h2>
+    <p>Move the mouse over the canvas to check the co-ordinates.</p>
+
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <p id="co-ordinates"></p>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const coords = document.getElementById('co-ordinates');
+
+        canvas.addEventListener('mousemove', function(e) {
+            const x = e.clientX;
+            const y = e.clientY;
+            coords.innerText = `X Co-ordinate: ${x}, Y Co-ordinate: ${y}`;
+        });
+    </script>
+</body>
+
+</html>
